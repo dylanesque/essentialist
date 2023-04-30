@@ -5,3 +5,7 @@ export function fizzbuzz(size: number): string {
     return size.toString();
   }
 }
+
+export function isMultipleOfThree(num: number) {
+    return (num % 3 == 0) ? true : false;
+}
