@@ -9,3 +9,7 @@ export function fizzbuzz(size: number): string {
 export function isMultipleOfThree(num: number) {
     return (num % 3 == 0) ? true : false;
 }
+
+export function isMultipleOfFive(num: number) {
+    return (num % 5 == 0) ? true : false;
+}
