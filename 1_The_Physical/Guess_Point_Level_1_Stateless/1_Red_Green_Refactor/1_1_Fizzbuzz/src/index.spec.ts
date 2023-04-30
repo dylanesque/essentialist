@@ -1,4 +1,4 @@
-import { fizzbuzz, isMultipleOfThree, isMultipleOfFive } from './fizzbuzz';
+import { fizzbuzz, isMultipleOfThree, isMultipleOfThreeAndFive, isMultipleOfFive } from './fizzbuzz';
 
 describe("fizzbuzz", () => {
     it('takes a positive number', () => {
@@ -26,6 +26,16 @@ describe("fizzbuzz", () => {
     it("returns false when given a non-multiple of 5", () => {
         expect(isMultipleOfFive(4)).toEqual(false);
     });
+
+    it("returns true when given a multiple of both 3 and 5", () => {
+        expect(isMultipleOfThreeAndFive(15)).toEqual(true);
+    });
+
+    it("returns false when given a non-multiple of both 3 and 5", () => {
+        expect(isMultipleOfThreeAndFive(12)).toEqual(false);
+    });
+
+    
 
 });
 
