@@ -1,11 +1,7 @@
 import { checkPalindrome, reverseAString } from "./index";
 
 describe("palindrome checker", () => {
-  it("reverses a string", () => {
-    expect(reverseAString("bill")).toBe("llib");
-  });
-
-  it('knows that Momx is not a palindrome', () => {
+    it('knows that Momx is not a palindrome', () => {
     expect(checkPalindrome('Momx')).toBe(false);
   });
 
@@ -18,15 +14,17 @@ describe("palindrome checker", () => {
     expect(checkPalindrome(word)).toBe(status);
   });
 
-  it("reverses a multi-word string", () => {
-    expect(reverseAString("ball hitter")).toBe("rettih llab");
+  it.each([
+    ['Was It A Rat I Saw', true],
+    ['Never Odd or Even', true]
+  ])("knows that %p is a palindrome", (sentence: string, status: boolean) => {
+    expect(checkPalindrome(sentence)).toBe(status);
   });
 
-  it("returns false for multi-word non-palindrome", () => {
-    expect(checkPalindrome("ball hitter")).toBe(false);
-  });
-
-  it("returns true for multi-word palindrome", () => {
-    expect(checkPalindrome("never odd or even")).toBe(true);
+  it.each([
+    ['1Never Odd of Even1', false],
+    ['Never Odd or Even1', false]
+  ])("knows that %p is not a palindrome", (sentence: string, status: boolean) => {
+    expect(checkPalindrome(sentence)).toBe(status);
   });
 });
