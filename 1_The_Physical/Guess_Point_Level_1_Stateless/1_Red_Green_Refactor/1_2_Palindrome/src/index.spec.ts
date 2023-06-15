@@ -5,14 +5,15 @@ describe("palindrome checker", () => {
     expect(reverseAString("bill")).toBe("llib");
   });
 
-  it('knows that "bill" is not a palindrome', () => {
-    expect(checkPalindrome("bill")).toBe(false);
+  it('knows that Momx is not a palindrome', () => {
+    expect(checkPalindrome('Momx')).toBe(false);
   });
 
   it.each([
     ["mom", true],
     ["Mom", true],
     ["MoM", true],
+    ['xMomx', true]
   ])("knows that %p is a palindrome", (word: string, status: boolean) => {
     expect(checkPalindrome(word)).toBe(status);
   });
