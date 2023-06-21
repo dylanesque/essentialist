@@ -1,15 +1,21 @@
 import { fizzbuzz, isMultipleOfThree, isMultipleOfThreeAndFive, isMultipleOfFive } from './fizzbuzz';
 
 describe("fizzbuzz", () => {
-    it('takes a positive number', () => {
+    it('takes a positive number between 1 and 100', () => {
         const num = 3;
         expect(fizzbuzz(num)).toEqual(num.toString());
     });
 
-    it('throws when called with a negative number', () => {
-        const num = -2;
+    it('does not work when called with a negative number', () => {
+        const num = -12;
         expect(fizzbuzz(num)).toEqual('Please enter a positive number')
     });
+
+    it('does not work when called with a number greater than 100', () => {
+        const num = 102;
+        expect(fizzbuzz(num)).toEqual('Please enter a positive number')
+    });
+
 
     it("returns true when given a multiple of 3", () => {
         expect(isMultipleOfThree(3)).toEqual(true);
