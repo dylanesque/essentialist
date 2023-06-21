@@ -7,5 +7,5 @@ export function checkPalindrome(str: string) {
     let reversed = reverseAString(normalizedStr);
     str = normalizedStr.replace(/\s+/g, '');
     reversed = reversed.replace(/\s+/g, '');
-    return (str == reversed);
+    return (str === reversed);
 }
