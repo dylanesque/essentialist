@@ -5,11 +5,11 @@ export function fizzbuzz(num: number): string {
     return 'Please enter a number lower than or equal to 100'
   } else {
         if (isMultipleOfThreeAndFive(num)) {
-            console.log("FizzBuzz")
+            return "FizzBuzz";
         } else if (isMultipleOfThree(num)) {
             return "Fizz";
         } else if (isMultipleOfFive(num)) {
-            console.log("Buzz");
+            return "Buzz";
     }
         return num.toString();
   }
