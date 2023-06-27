@@ -1,6 +1,10 @@
 import { fizzbuzz, isMultipleOfThree, isMultipleOfThreeAndFive, isMultipleOfFive } from './fizzbuzz';
 
 describe("fizzbuzz", () => {
+    it('returns the number in string form', () => {
+        const num = 2;
+        expect(fizzbuzz(num)).toEqual(num.toString());
+    })
     it('takes a positive number between 1 and 100', () => {
         const num = 3;
         expect(fizzbuzz(num)).toEqual(num.toString());
@@ -13,7 +17,7 @@ describe("fizzbuzz", () => {
 
     it('does not work when called with a number greater than 100', () => {
         const num = 102;
-        expect(fizzbuzz(num)).toEqual('Please enter a positive number')
+        expect(fizzbuzz(num)).toEqual('Please enter a number lower than or equal to 100')
     });
 
 

@@ -1,7 +1,10 @@
-export function fizzbuzz(size: number): string {
-  if (size <= 0) {
+export function fizzbuzz(num: number): string {
+  if (num <= 0) {
     return 'Please enter a positive number'
+  } else if (num >= 101) {
+    return 'Please enter a number lower than or equal to 100'
   } else {
+    /*
     for (let i = 0; i <= size; i++) {
         if (isMultipleOfThreeAndFive(i)) {
             console.log("FizzBuzz")
@@ -12,10 +15,10 @@ export function fizzbuzz(size: number): string {
         } else {
             console.log(i);
         }
+        */
     }
-    return size.toString();
+    return num.toString();
   }
-}
 
 export function isMultipleOfThree(num: number) {
     return (num % 3 == 0) ? true : false;
