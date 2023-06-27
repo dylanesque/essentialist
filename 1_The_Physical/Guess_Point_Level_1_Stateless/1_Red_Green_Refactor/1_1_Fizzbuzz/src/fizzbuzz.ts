@@ -4,21 +4,16 @@ export function fizzbuzz(num: number): string {
   } else if (num >= 101) {
     return 'Please enter a number lower than or equal to 100'
   } else {
-    /*
-    for (let i = 0; i <= size; i++) {
-        if (isMultipleOfThreeAndFive(i)) {
+        if (isMultipleOfThreeAndFive(num)) {
             console.log("FizzBuzz")
-        } else if (isMultipleOfThree(i)) {
-            console.log("Fizz");
-        } else if (isMultipleOfFive(i)) {
+        } else if (isMultipleOfThree(num)) {
+            return "Fizz";
+        } else if (isMultipleOfFive(num)) {
             console.log("Buzz");
-        } else {
-            console.log(i);
-        }
-        */
     }
-    return num.toString();
+        return num.toString();
   }
+}
 
 export function isMultipleOfThree(num: number) {
     return (num % 3 == 0) ? true : false;

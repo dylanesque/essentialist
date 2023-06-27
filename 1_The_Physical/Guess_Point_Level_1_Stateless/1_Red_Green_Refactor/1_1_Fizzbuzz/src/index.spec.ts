@@ -7,7 +7,8 @@ describe("fizzbuzz", () => {
     })
     it('takes a positive number between 1 and 100', () => {
         const num = 3;
-        expect(fizzbuzz(num)).toEqual(num.toString());
+        expect(fizzbuzz(num)).toEqual("Fizz"
+        );
     });
 
     it('does not work when called with a negative number', () => {
