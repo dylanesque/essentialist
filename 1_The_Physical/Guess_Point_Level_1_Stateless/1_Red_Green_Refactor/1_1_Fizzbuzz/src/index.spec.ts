@@ -37,6 +37,9 @@ describe("fizzbuzz", () => {
 
 
   it("does not work when called with a string", () => {
+    expect(fizzbuzz("Clank")).toEqual(
+        "Please enter a number."
+      );
   });
 
   it("returns true when given a multiple of 3", () => {
