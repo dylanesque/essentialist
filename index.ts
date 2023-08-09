@@ -1,7 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+
 const app = express();
 const port = 3000;
+const db = require('./queries')
 
 app.use(bodyParser.json());
 app.use(
@@ -10,6 +12,8 @@ app.use(
   })
 );
 
+app.get('/users', db.getUsers)
+
 app.get("/", (request, response) => {
   response.json({ info: "Node.js, Express, and Postgres API" });
 });
@@ -17,3 +21,5 @@ app.get("/", (request, response) => {
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });
+
+// TODO Michael: Connecting to a Postgres database using a client
