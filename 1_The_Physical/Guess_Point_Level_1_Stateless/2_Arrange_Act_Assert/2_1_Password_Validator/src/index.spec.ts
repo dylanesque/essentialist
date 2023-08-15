@@ -13,7 +13,7 @@ provided with an invalid password — contains an error message or type for
 all errors in occurrence. There can be multiple errors at a single time.
 
 */
-
+import { passwordValidator } from './index'
 
 describe('password validator', () => {
     describe('length', () => {
