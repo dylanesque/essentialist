@@ -3,5 +3,9 @@ export function passwordValidator(password: string): boolean {
         return false;
     }
 
+    if (/\d/.test(password) == false) {
+        return false;
+    }
+
     return true
 } 
