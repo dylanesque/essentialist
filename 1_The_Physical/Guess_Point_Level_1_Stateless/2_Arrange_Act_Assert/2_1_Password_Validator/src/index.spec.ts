@@ -30,6 +30,10 @@ describe('password validator', () => {
         it('does not validate passwords without any digits', () => {
             expect(passwordValidator('maxwellTheBe')).toBe(false);
         });
+
+        it('does not validate passwords without any uppercase characters', () => {
+            expect(passwordValidator('maxwell1_c')).toBe(false);
+        });
     })
 })
 
