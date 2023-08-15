@@ -1,5 +1,8 @@
 export function passwordValidator(password: string): boolean {
+    let isPasswordValid = true;
     let hasUpper = false;
+    const errorsList = [];
+
     password.split('').forEach((char) => {
         console.log(char);
         if (char === char.toUpperCase() && char !== char.toLowerCase()) {
@@ -7,7 +10,9 @@ export function passwordValidator(password: string): boolean {
         }
     })
 
-    if (hasUpper == false) { return false }
+    if (hasUpper == false) { 
+        return false 
+    }
 
     if (password.length < 5 || password.length > 15) {
         return false;
