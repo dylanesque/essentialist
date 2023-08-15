@@ -16,7 +16,7 @@ all errors in occurrence. There can be multiple errors at a single time.
 import { passwordValidator } from './index'
 
 describe('password validator', () => {
-    describe('length', () => {
+    describe('length checks', () => {
         it('does not validate passwords fewer than 5 characters', () => {
             expect(passwordValidator('1huM')).toBe(false);
         });
@@ -24,6 +24,12 @@ describe('password validator', () => {
         it('does not validate passwords longer than 15 characters', () => {
             expect(passwordValidator('thePhysical1234567')).toBe(false);
         })
+    })
+
+    describe('character checks', () => {
+        it('does not validate passwords without any digits', () => {
+            expect(passwordValidator('maxwellTheBe')).toBe(false);
+        });
     })
 })
 
