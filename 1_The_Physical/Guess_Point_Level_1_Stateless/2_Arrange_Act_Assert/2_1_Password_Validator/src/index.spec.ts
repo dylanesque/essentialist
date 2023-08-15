@@ -19,6 +19,10 @@ describe('password validator', () => {
     describe('length', () => {
         it('does not validate passwords fewer than 5 characters', () => {
             expect(passwordValidator('1huM')).toBe('false');
+        });
+
+        it('does not validate passwords longer than 15 characters', () => {
+            expect(passwordValidator('thePhysical1234567')).toBe('false');
         })
     })
 })
