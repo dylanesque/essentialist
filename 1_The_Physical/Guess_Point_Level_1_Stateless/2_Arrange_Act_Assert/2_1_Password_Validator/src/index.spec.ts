@@ -18,21 +18,36 @@ import { passwordValidator } from "./index";
 describe("password validator", () => {
   describe("length checks", () => {
     it("does not validate passwords fewer than 5 characters", () => {
-      expect(passwordValidator("1huM")).toBe(false);
+      expect(passwordValidator("1huM")).toStrictEqual({
+        isValid: false,
+        errors: [
+            "You must have at least five characters in the password.",
+        ],
+      });
     });
 
     it("does not validate passwords longer than 15 characters", () => {
-      expect(passwordValidator("thePhysical1234567")).toBe(false);
+      expect(passwordValidator("thePhysical1234567")).toStrictEqual({
+        isValid: false,
+        errors: [
+            "You must have no more than fifteen characters in the password.",
+        ],
+      });
     });
   });
 
   describe("character checks", () => {
     it("does not validate passwords without any digits", () => {
-      expect(passwordValidator("maxwellTheBe")).toBe(false);
+      expect(passwordValidator("maxwellTheBe")).toStrictEqual({
+        isValid: false,
+        errors: [
+          "You must have at least one digit in the password.",
+        ],
+      });
     });
 
     it("does not validate passwords without any uppercase characters", () => {
-      expect(passwordValidator("maxwell1_c")).toReturn({
+      expect(passwordValidator("maxwell1_c")).toStrictEqual({
         isValid: false,
         errors: [
           "You must have at least one uppercase character in the password.",

@@ -1,7 +1,12 @@
-export function passwordValidator(password: string): boolean {
+type ValidationObject = {
+    isValid: boolean;
+    errors: string[];
+}
+
+export function passwordValidator(password: string): ValidationObject {
     let isPasswordValid = true;
     let hasUpper = false;
-    const errorsList = [];
+    const errors = [];
 
     password.split('').forEach((char) => {
         console.log(char);
@@ -11,17 +16,25 @@ export function passwordValidator(password: string): boolean {
     })
 
     if (hasUpper == false) { 
-        return false 
+        isPasswordValid = false;
+        errors.push("You must have at least one uppercase character in the password.");
     }
 
-    if (password.length < 5 || password.length > 15) {
-        return false;
+    if (password.length < 5) {
+        isPasswordValid = false;
+        errors.push("You must have at least five characters in the password.");
+    } 
+    
+    if (password.length > 15) {
+        isPasswordValid = false;
+        errors.push("You must have no more than fifteen characters in the password.");
     }
 
     // checks string for numerical characters
     if (/\d/.test(password) == false) {
-        return false;
+        isPasswordValid = false;
+        errors.push("You must have at least one digit in the password.");
     }
 
-    return true
+    return {isValid: isPasswordValid, errors };
 }
